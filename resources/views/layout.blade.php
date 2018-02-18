@@ -19,6 +19,8 @@
         @include('patials.elements')
         @include('patials.services')
         @include('patials.video')
+        @include('patials.form')
+        @include('patials.footer')
 
 
     </body>
@@ -27,7 +29,7 @@
              var revapi;
 
         $(document).ready(function() {
-            $('.navbar').find('a').click((e)=>{e.preventDefault();})
+            $('.navbar-nav').find('a').click((e)=>{e.preventDefault();})
            
             $(window).scroll(()=>{
 
@@ -95,7 +97,30 @@
             }
 
         }
+        var players = $('.youtube-player')
+        var loadplayer = function(event){
+        var target = event.currentTarget 
+        var iframe = document.createElement('iframe');
+        
+        iframe.height = target.clientHeight
+        iframe.width = target.clientwidth
+        iframe.src = "https://www.youtube.com/embed/"  + 
+                    target.dataset.videoId + '?autoplay=1' ;
+        iframe.setAttribute('frameborder', 0);
 
+        if (target.children.length) {
+            target.replaceChild(iframe, target.firstElementChild)
+          } else {
+            target.appendChild(iframe)
+          }
+        }
+        
+        var config = { once: true }
+        
+        Array.from(players).forEach(function (player) {
+          player.addEventListener('click', loadplayer, config)
+        })
+        
 
     </script>
    

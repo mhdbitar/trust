@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'lang'=>'English',
+    'lang1'=>'العربية',
+    'lang2'=>'Turkish',
     'home'=>'Home',
     'about'=>'About',
     'why_trust'=>'Why Trust',
@@ -32,5 +35,10 @@ return [
     'plane'=>'Air Freight',
     'plane_sub'=>'Best Air Freight',
     'plan_desc'=>'We deal with the best international shipping companies in Turkey and offer you the best air freight service in Turkey at all.We are accustomed to offering our customers air freight services from Turkey to all countries of the world in a unique and distinctive.',
-    ''=>'',
+    'f_name'=>'Full Name',
+    'f_phone'=>'Phone Number',
+    'f_email'=>'Email',
+    'f_message'=>'Message',
+    'f_send'=>'Send',
+    'contact_us'=>'Contact Us',
 ];

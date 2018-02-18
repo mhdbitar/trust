@@ -28,7 +28,28 @@
                             <a class="nav-link links" href="#"  onclick="autoScrollto('video')">@lang('site.video')</a>
                         </li>
                     </ul>
-                    <button class="btn btn-header">Pro Order</button>
+                    <div class="dropdown ">
+                       
+                        @switch(App::getlocale())
+                            @case('en')
+                            <button class="btn btn-flag dropdown-toggle" id="dropdownMenuButton"data-toggle="dropdown">
+                                <img class="flag" src="{{asset('img/United.png')}}" alt="">{{__('site.lang')}}
+                            </button>
+                            <div class="dropdown-menu right">
+                                <a href="{{ url('/ar')}}" class="dropdown-item"><img class="flag" src="{{asset('img/Saudi.png')}}" alt="">{{__('site.lang1')}}</a>
+                            </div>
+                            @break
+                            @case('ar')
+                            <button class="btn btn-flag dropdown-toggle" id="dropdownMenuButton"data-toggle="dropdown">
+                                    <img class="flag" src="{{asset('img/Saudi.png')}}" alt="">{{__('site.lang')}}
+                                </button>
+                            <div class="dropdown-menu right">
+                                <a href="{{ url('/en')}}" class="dropdown-item"><img class="flag" src="{{asset('img/United.png')}}" alt="">{{__('site.lang1')}}</a>
+                            </div>
+                            @break 
+                            @endswitch
+                            
+                        </div>
                 </div>
             </nav>
         </div>

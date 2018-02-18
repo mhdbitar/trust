@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layout');
-});
+Route::get('/{lang}','MainController@index');
 
 
-
-
+Route::post('contact', 'ContactController@contact')->name('contact');
